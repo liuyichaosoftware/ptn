@@ -1,0 +1,23 @@
+{
+    "15min": {
+        "EntryPattern": {
+            "1": {
+                "increase_range": 1.02,
+            },
+            "2": {},
+            "3": {}
+        },
+        "CheckPattern": {
+            "1": {}
+        },
+        "DatePattern": {
+            "1": {}
+        }
+    },
+    "day": {
+        "CheckPattern": {
+            "1": {},
+            "2": {}
+        }
+    }
+}
