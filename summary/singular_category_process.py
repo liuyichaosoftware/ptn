@@ -1,45 +1,7 @@
 from summary.pattern_target_summary import PatternTargetSummary
 import csv
 
-def filt_desc():
-    '''
-    返回过滤条件描述
-    :return: [[]]
-    '''
-    lines = []
-    line = ['summary_target', 'CloseT/Open0-1', 'HighestT/Open0-1', 'LowestT.open0-1']
-    lines.append(line)
-    line = ['filter', 'average', 'mid_value']
-    lines.append(line)
-    line = ['number','>10']
-    lines.append(line)
-    line = ['CloseT/Open0-1', '>0.3', '>0.3']
-    lines.append(line)
-    line = ['HighestT/Open0-1', '>0.4', '>0.4']
-    lines.append(line)
-    line = ['LowestT.open0-1', '>-0.2', '>-0.2']
-    lines.append(line)
-
-    lines.append([])
-    lines.append(['patterns'])
-
-    return lines
-
-
-def judge_pattern(param):
-    delta = 0.01
-    delta_2 = 0.01
-    if param['num_ave'] > 10 :
-        metrics = param['pattern_sum_metrics']
-        if metrics is not None and len(metrics) == 4:
-            average = metrics[0]
-            mid = metrics[1]
-            if len(average) >= 3 and len(mid) >= 3:
-                if average[0] > 0.3*delta and average[1] > 0.4*delta and average[2] > -0.2*delta_2 and mid[0] > 0.3*delta and mid[1] >0.4*delta and mid[2] >-0.2*delta_2:
-                    return True
-
-
-    return False
+from summary.filt_pattern import *
 
 
 def category_output(name, date_periods, target_ans, target_desc, path):

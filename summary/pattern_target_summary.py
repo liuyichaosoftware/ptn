@@ -109,40 +109,27 @@ class PatternTargetSummary:
 
                     for i in range(0,len(sum_metric[target_no]['target_values'])):
                         sum_metric[target_no]['target_values'][i] += targets_sum[target_no]['target_values'][i]
-                        #print("CHECKED")
-                        #print(len(targets_sum[target_no]['target_values'][i]))
-                        #print(targets_sum[target_no]['target_values'][i])
-                        #print(targets_sum[target_no]['num'])
 
 
-                #sum_metric[target_no]['target_values'] += targets_sum[target_no].get('target_values', [])
-                #print('num', sum_metric[target_no]['num'], targets_sum[target_no]['num'])
                 sum_metric[target_no]['num'] += targets_sum[target_no]['num']
 
 
 
 
         for target_no in sum_metric:
-            #print('-------num--------')
-            #print(sum_metric[target_no]['num'])
+
             sum_metric[target_no]['num_ave'] = sum_metric[target_no]['num']*1.0 / len(targets_sums)
             target_values = sum_metric[target_no].get('target_values', None)
             if target_values is None:
-                #print("XXX1")
                 continue
 
-            #print('check_values')
-            #print(len(taget_values))
 
             target_metric = []
             if len(target_values) == 0 or len(target_values[0]) ==0 :
-                #print("XXXX")
                 continue
 
             for values in target_values:
-                #print('-------values------')
-                #print(len(values))
-                #print(values)
+
                 values.sort(reverse=True)
                 ave = None
                 midvalue = None

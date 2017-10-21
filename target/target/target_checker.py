@@ -6,6 +6,7 @@ import talib
 from data.data_structure import DataStructure
 from pattern.pattern_checker import PatternCheker
 
+from summary.filt_pattern import direction
 
 class Target:
     def __init__(self, level, targetno, period=15, target_desc="", call_func = None):
@@ -14,15 +15,16 @@ class Target:
         self.period = period
         self.target_desc = target_desc
 
-        def call_func_method(index:int, data_array:list):
+        def call_func_method(index:int, data_array:list, slippage = 0.0, slippage_num = 3):
+
             period_data = data_array[index:index+period]
             if call_func:
                 return call_func(period_data)
             else:
                 open_price = period_data[0].open_price
-                close_price = period_data[-1].close_price
-                high_price = max(map(lambda item:item.high_price, period_data)) * 1.0
-                low_price = min(map(lambda item:item.low_price, period_data)) * 1.0
+                close_price = period_data[-1].close_price - slippage * slippage_num * direction
+                high_price = max(map(lambda item:item.high_price, period_data)) * 1.0 - slippage * slippage_num * direction
+                low_price = min(map(lambda item:item.low_price, period_data)) * 1.0 - slippage * slippage_num * direction
                 return (close_price / open_price - 1.0, high_price / open_price - 1.0, low_price / open_price - 1.0)
 
         self.calculate_func = call_func_method
@@ -60,7 +62,7 @@ class TargetChecker:
 
 
     @staticmethod
-    def check_pattern_targets(checked_pattern_structure, time_start, time_end):
+    def check_pattern_targets(checked_pattern_structure, time_start, time_end, slippage = 0.0, slippage_num = 3):
 
         day_start_index = 0
         day_end_index = len(checked_pattern_structure['data'].days)
@@ -91,7 +93,7 @@ class TargetChecker:
                 if i in checked_pattern_structure['checked_pattern'][level]:
                     for target in targets:
                         if i + target.period <= ceindex:
-                            target_value = target.calculate_func(i, checked_pattern_structure['data'].data[level])
+                            target_value = target.calculate_func(i, checked_pattern_structure['data'].data[level], slippage, slippage_num)
                             '''
                             if (target_value[0] - 0) <= 0.00000001 and (target_value[0] - 0) >= -0.00000001:
                                 print("QQQQQQQQQ")

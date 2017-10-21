@@ -1,4 +1,4 @@
-from summary.singular_category_process import filt_desc
+from summary.filt_pattern import *
 import csv
 
 def merge_category_targets(category_sum_targets):
