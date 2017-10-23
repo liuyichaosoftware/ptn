@@ -32,14 +32,20 @@ def filt_desc():
     lines.append(line)
     line = ['filter', 'average', 'mid_value']
     lines.append(line)
-    line = ['number','>10']
+    line = ['number','>',num_ave_per_period_threshold]
     lines.append(line)
-    line = ['CloseT/Open0-1', '>0.3', '>0.3']
-    lines.append(line)
-    line = ['HighestT/Open0-1', '>0.4', '>0.4']
-    lines.append(line)
-    line = ['LowestT.open0-1', '>-0.2', '>-0.2']
-    lines.append(line)
+
+    if len(average_thresholds) > 0 and len(mid_thresholds) > 0:
+        line = ['CloseT/Open0-1 * '+str(direction) ,'>' + str(average_thresholds[0]), '>'+str(mid_thresholds[0])]
+        lines.append(line)
+
+    if len(average_thresholds) > 1 and len(mid_thresholds) > 1:
+        line = ['HighestT/Open0-1 * '+str(direction), '>' + str(average_thresholds[1]), '>'+str(mid_thresholds[1])]
+        lines.append(line)
+
+    if len(average_thresholds) > 2 and len(mid_thresholds) > 2:
+        line = ['LowestT/open0-1 * '+str(direction), '>' + str(average_thresholds[2]), '>'+str(mid_thresholds[2])]
+        lines.append(line)
 
     lines.append([])
     lines.append(['patterns'])
