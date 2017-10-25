@@ -32,6 +32,29 @@
             执行该Pattern的检查, 检查到该Pattern 将其添加:
                     if check15min_pattern_EntryPattern_1(** patterns['1']): # 标号 "1"
                         self.add_checked_pattern(ans,'EntryPattern', 1, True) # 标号 1, 具体添加这个Pattern时 是数字 1
+            
+            * 在pattern_checker 中定义了工具: *
+                def upper_level_dataitem(self, check_level, index, target_level):
+                当前所在烛线更大级别所对应的烛线到当前烛线之前的部分, 例如15min级别的某烛线, 可以返回当天到该烛线之前的所有部分组成一根新的大级别烛线, 比如, 烛线突破当天最高点可用.
+                如果该烛线(index对应)为大一级别第一根烛线, 或者其他无法获取的情况, 返回None, 否则返回大一级别的到当前烛线之前的所有烛线组合.
+                    def check15min_pattern_EntryPattern_4():
+                        # 今天这根烛线之前的价格合并
+                        today = self.upper_level_dataitem('15min', index, 'day')
+                        
+                        # 该烛线不是当天第一根
+                        if today is not None:
+                            day_index = self.data.fifteen_mins[index].start_index['day']
+                            
+                            # 今天这根烛线之前一根再之前的价格合并
+                            today_shift = self.upper_level_dataitem('15min', index-1, 'day')
+                            
+                            # 目标: 今天的高价大于昨天的高价, 并且保证是第一次出现
+                            return day_index>=1 and today.high_price > self.data.days[day_index-1].high_price and (today_shift is None or today_shift.high_price<=self.data.days[day_index-1].high_price)
+                        return False
+                    
+                    这只是一个例子, 保证上一根烛线为止,今天的高价第一次大于昨天的高价. 有更好的写法, 该写法只是为了演示 upper_level_dataitem 如何使用.
+                
+            
     
     2. 定义好Pattern后, 配置需要检查的Pattern, 配置文件在 properties/pattern.property, Json格式, 以 # 开头的行属于注释, 举例:
         {

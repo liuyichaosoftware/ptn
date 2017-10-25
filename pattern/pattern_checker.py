@@ -32,6 +32,13 @@ class PatternCheker:
 
 
     def upper_level_dataitem(self, check_level, index, target_level):
+        '''
+        upper level item util before this time
+        :param check_level:
+        :param index:
+        :param target_level:
+        :return:
+        '''
         target_index = self.data.data[check_level][index].start_index[target_level]
         now_start_index = self.data.data[target_level][target_index].start_index[check_level]
         if now_start_index < index:
