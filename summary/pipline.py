@@ -12,6 +12,14 @@ from target.target_checker import TargetChecker
 from multiprocessing import cpu_count, Pool
 
 
+def load_property(path):
+    lines = open(path).readlines()
+    lines = filter(lambda line :not line.strip().startswith('#'), lines)
+    text = '\n'.join(lines)
+    return json.loads(text)
+
+
+
 def extract_patterns(properties):
     patterns = []
     for level in properties:
@@ -73,14 +81,19 @@ def mull_process_process(ptcs, date_periods):
 
 
 if __name__ == '__main__':
+
+    time_periods = [((2004,1,1),(2005,1,1)), ((2005,1,1),(2006,1,1)), ((2006,1,1),(2007,1,1)), ((2007,1,1),(2008,1,1)),
+                    ((2008,1,1),(2009,1,1)), ((2009,1,1),(2010,1,1)), ((2010,1,1),(2011,1,1)), ((2012,1,1),(2013,1,1)),
+                    ((2013,1,1),(2014,1,1)), ((2014,1,1),(2015,1,1)), ((2015,1,1),(2016,1,1)), ((2016,1,1),(2017,1,1))]
+
     data_dir = '/Users/liuyichao/PycharmProjects/ptn/raw_data/data'
-
-
     output_path = '/Users/liuyichao/PycharmProjects/ptn/output'
-    properties= json.loads(open('/Users/liuyichao/PycharmProjects/ptn/properties/pattern.property').read())
 
-    slippage_properties = json.loads(open('/Users/liuyichao/PycharmProjects/ptn/properties/category_slippage.property').read())
-    print(slippage_properties)
+    properties= load_property('/Users/liuyichao/PycharmProjects/ptn/properties/pattern.property')
+
+    slippage_properties = load_property('/Users/liuyichao/PycharmProjects/ptn/properties/category_slippage.property')
+
+
 
     print(os.listdir(data_dir))
 
@@ -88,14 +101,7 @@ if __name__ == '__main__':
 
     file_list = [data_dir+os.sep+item for item in os.listdir(data_dir)]
 
-
-
-
     patterns = extract_patterns(properties)
-
-    time_periods = [((2004,1,1),(2005,1,1)), ((2005,1,1),(2006,1,1)), ((2006,1,1),(2007,1,1)), ((2007,1,1),(2008,1,1)),
-                    ((2008,1,1),(2009,1,1)), ((2009,1,1),(2010,1,1)), ((2010,1,1),(2011,1,1)), ((2012,1,1),(2013,1,1)),
-                    ((2013,1,1),(2014,1,1)), ((2014,1,1),(2015,1,1)), ((2015,1,1),(2016,1,1)), ((2016,1,1),(2017,1,1))]
 
     date_periods = [(datetime.datetime(*item[0]), datetime.datetime(*item[1])) for item in time_periods]
 

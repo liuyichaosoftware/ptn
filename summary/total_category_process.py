@@ -1,6 +1,7 @@
 from summary.filt_pattern import *
 import csv
 
+
 def merge_category_targets(category_sum_targets):
     target_pattern_category = {}
     for category_sum_target in category_sum_targets:
@@ -127,14 +128,14 @@ def categories_sum_process(patterns, targets, names, periods, category_sum_targe
                     if len(periods) > 0:
                         ave_num = sum_num*1.0 / len(periods)
 
-                pattern_line += [sum_num, ave_num]
+                pattern_line += ['%.4f' % sum_num, '%.4f' % ave_num]
                 sum_metrics = None
                 if 'target_metric_merge' in merged_pattern_targets[target_no][pattern]:
                     sum_metrics = merged_pattern_targets[target_no][pattern]['target_metric_merge']
                 if sum_metrics is None or len(sum_metrics) == 0:
                     pattern_line += [None,None,None,None]
                 else:
-                    pattern_line += [str(item) for item in sum_metrics]
+                    pattern_line += ['('+', '.join('%.4f'%one for one in item) +')' for item in sum_metrics]
 
                 for category_sum_target in category_sum_targets:
                     category_metric = []
@@ -145,7 +146,7 @@ def categories_sum_process(patterns, targets, names, periods, category_sum_targe
                         if 'sum_num' in tpmp:
                             num = tpmp['sum_num']
                         if 'pattern_sum_metrics' in tpmp:
-                            metric = [str(item) for item in tpmp['pattern_sum_metrics']]
+                            metric = ['('+', '.join('%.4f'%one for one in item) +')' for item in tpmp['pattern_sum_metrics']]
 
                     category_metric.append(num)
                     category_metric += metric

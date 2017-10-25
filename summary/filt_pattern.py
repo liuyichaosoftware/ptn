@@ -1,11 +1,13 @@
 num_ave_per_period_threshold = 10
 
+# direction, long 1.0, short -1.0
+
+direction = 1.0
+
 
 '''
 tuple order : [CloseT/Open0-1, HighestT/Open0-1, LowestT/open0-1]
 '''
-
-
 # average value
 average_thresholds = [0.3, 0.4, -0.2]
 average_factors = [0.01, 0.01, 0.01]
@@ -16,9 +18,7 @@ mid_thresholds = [0.3, 0.4, -0.2]
 mid_factors = [0.01, 0.01, 0.01]
 
 
-# direction, long 1.0, short -1.0
 
-direction = 1.0
 
 
 

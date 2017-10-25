@@ -39,7 +39,7 @@ def category_output(name, date_periods, target_ans, target_desc, path):
             pattern_line = []
             pattern_line.append(str(pattern[0]) +'-' + str(pattern[1]) +'-'+ str(pattern[2]))
             pattern_line.append(str(target_ans[target_no][pattern]['sum_num']))
-            pattern_line.append(str(target_ans[target_no][pattern]['num_ave']))
+            pattern_line.append('%.4f'%target_ans[target_no][pattern]['num_ave'])
 
             sum_metrics = target_ans[target_no][pattern]['pattern_sum_metrics']
 
@@ -50,7 +50,7 @@ def category_output(name, date_periods, target_ans, target_desc, path):
             if sum_metrics is None or len(sum_metrics) == 0:
                 pattern_line += [None,None,None,None]
             else:
-                pattern_line += [str(item) for item in sum_metrics]
+                pattern_line += ['('+', '.join('%.4f'%one for one in item) +')' for item in sum_metrics]
 
             nums = target_ans[target_no][pattern]['num']
             metrics = target_ans[target_no][pattern]['pattern_target_metrics']
@@ -59,7 +59,7 @@ def category_output(name, date_periods, target_ans, target_desc, path):
                 if metrics[i] is None or len(metrics[i]) == 0:
                     date_metrics += [None, None, None, None]
                 else:
-                    date_metrics += [str(item) for item in metrics[i]]
+                    date_metrics += ['('+', '.join('%.4f'%one for one in item) +')' for item in metrics[i]]
                 pattern_line += date_metrics
 
             write_list.append(pattern_line)
