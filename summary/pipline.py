@@ -150,14 +150,14 @@ if __name__ == '__main__':
         all_targets[ptc.data.name] = category_targets
 
         category_path = output_path + os.sep + ptc.data.name
-        target_sum, target_pattern_category= category_process(date_periods_category, ptc.data.name, patterns, category_targets, category_path)
+        target_sum, target_pattern_category= category_process(date_periods_category, ptc.data.name, patterns, category_targets, category_path, data_structure)
 
 
         category_sum_targets.append(target_sum)
         target_pattern_categories.append(target_pattern_category)
         names.append(ptc.data.name)
 
-        print("process category",ptc.data.name,"over!", time.time() - start_time)
+        print("process category",ptc.data.name, "over!", time.time() - start_time)
 
     targets = TargetChecker.level_targets
 

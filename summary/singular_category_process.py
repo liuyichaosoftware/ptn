@@ -1,16 +1,36 @@
+from data.data_structure import DataStructure
+from market_summary.market_summary import category_period_market_summary
 from summary.pattern_target_summary import PatternTargetSummary
 import csv
 
 from summary.filt_pattern import *
 
 
-def category_output(name, date_periods, target_ans, target_desc, path):
+def category_output(name, date_periods, target_ans, target_desc, path, data_structure):
 
     write_list = []
     title = ['category', name]
     write_list.append(title)
 
     target_pattern_category = {}
+
+    write_list.append([])
+    write_list.append(['market behavior'])
+    market_title = ['level']
+    for date_period in date_periods:
+        market_title += [str(date_period[0])+'-'+str(date_period[1]),'change_range %', 'total_num', 'positive_shadows','positive_shadows_scale %', 'negative_shadows', 'negative_shadows_scale %', 'calatrava_cross', 'calatrava_cross_scale %']
+
+    write_list.append(market_title)
+
+    for level in DataStructure.time_levels:
+        level_data = [level]
+        for date_period in date_periods:
+            res = category_period_market_summary(date_period[0], date_period[1], data_structure, level)
+            level_data += ['', '%.2f'%res[0], res[1], res[2], '%.2f'%res[3], res[4], '%.2f'%res[5], res[6], '%.2f'%res[7]]
+        write_list.append(level_data)
+
+    write_list.append([])
+
 
     for target_no in target_desc:
         target_pattern_category[target_no] = {}
@@ -83,7 +103,7 @@ def category_output(name, date_periods, target_ans, target_desc, path):
 
 
 
-def category_process(date_periods, name, patterns, pattern_targets, path):
+def category_process(date_periods, name, patterns, pattern_targets, path, data_structure):
     '''
 
     :param date_periods: 时间段们
@@ -154,7 +174,7 @@ def category_process(date_periods, name, patterns, pattern_targets, path):
             target_ans[target_no][(pattern_level, pattern_type, pattern_no)]['periods'] = len(date_periods)
 
 
-        target_pattern_category = category_output(name, date_periods, target_ans, target_desc, path)
+        target_pattern_category = category_output(name, date_periods, target_ans, target_desc, path, data_structure)
 
     return target_ans, target_pattern_category
 

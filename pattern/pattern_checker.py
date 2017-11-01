@@ -176,7 +176,6 @@ class PatternCheker:
                     if checkday_pattern_CheckPattern_1(**patterns['2']):
                         self.add_checked_pattern(ans, 'CheckPattern', 2, True)
 
-
         return ans
 
 
