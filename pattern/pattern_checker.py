@@ -71,72 +71,72 @@ class PatternCheker:
 
                 ''' upside momentum  '''
                 if '1' in patterns:
-                    def check15min_pattern_MomentumPattern_1(before_day = 1):
-                        if index >= before_day + 3:
-                            return self.data.fifteen_mins[index-1-before_day].close_price >\
-                                   self.data.fifteen_mins[index-2-before_day].close_price \
-                                   and self.data.fifteen_mins[index-2-before_day].close_price > \
-                                       self.data.fifteen_mins[index-3-before_day].close_price
+                    def check15min_pattern_MomentumPattern_1(before_candlestick = 1):
+                        if index >= before_candlestick + 3:
+                            return self.data.fifteen_mins[index - 1 - before_candlestick].close_price > \
+                                   self.data.fifteen_mins[index - 2 - before_candlestick].close_price \
+                                   and self.data.fifteen_mins[index - 2 - before_candlestick].close_price > \
+                                       self.data.fifteen_mins[index - 3 - before_candlestick].close_price
                         return False
 
                     if check15min_pattern_MomentumPattern_1(** patterns['1']):
                         self.add_checked_pattern(ans, 'MomentumPattern', 1, True)
 
                 if '2' in patterns:
-                    def check15min_pattern_MomentumPattern_2(before_day=4):
-                        if index >= before_day + 3:
-                            return self.data.fifteen_mins[index - 1 - before_day].close_price > \
-                                   self.data.fifteen_mins[index - 2 - before_day].close_price \
-                                   and self.data.fifteen_mins[index - 2 - before_day].close_price > \
-                                       self.data.fifteen_mins[index - 3 - before_day].close_price
+                    def check15min_pattern_MomentumPattern_2(before_candlestick=4):
+                        if index >= before_candlestick + 3:
+                            return self.data.fifteen_mins[index - 1 - before_candlestick].close_price > \
+                                   self.data.fifteen_mins[index - 2 - before_candlestick].close_price \
+                                   and self.data.fifteen_mins[index - 2 - before_candlestick].close_price > \
+                                       self.data.fifteen_mins[index - 3 - before_candlestick].close_price
                         return False
 
                     if check15min_pattern_MomentumPattern_2(**patterns['2']):
                         self.add_checked_pattern(ans, 'MomentumPattern', 2, True)
 
                 if '3' in patterns:
-                    def check15min_pattern_MomentumPattern_3(before_day=1):
-                        if index >= before_day + 3:
-                            return self.data.fifteen_mins[index - 1 - before_day].high_price > \
-                                   self.data.fifteen_mins[index - 2 - before_day].high_price \
-                                   and self.data.fifteen_mins[index - 2 - before_day].high_price > \
-                                       self.data.fifteen_mins[index - 3 - before_day].high_price
+                    def check15min_pattern_MomentumPattern_3(before_candlestick=1):
+                        if index >= before_candlestick + 3:
+                            return self.data.fifteen_mins[index - 1 - before_candlestick].high_price > \
+                                   self.data.fifteen_mins[index - 2 - before_candlestick].high_price \
+                                   and self.data.fifteen_mins[index - 2 - before_candlestick].high_price > \
+                                       self.data.fifteen_mins[index - 3 - before_candlestick].high_price
                         return False
 
                     if check15min_pattern_MomentumPattern_3(**patterns['3']):
                         self.add_checked_pattern(ans, 'MomentumPattern', 3, True)
 
                 if '4' in patterns:
-                    def check15min_pattern_MomentumPattern_4(before_day=4):
-                        if index >= before_day + 3:
-                            return self.data.fifteen_mins[index - 1 - before_day].high_price > \
-                                   self.data.fifteen_mins[index - 2 - before_day].high_price \
-                                   and self.data.fifteen_mins[index - 2 - before_day].high_price > \
-                                       self.data.fifteen_mins[index - 3 - before_day].high_price
+                    def check15min_pattern_MomentumPattern_4(before_candlestick=4):
+                        if index >= before_candlestick + 3:
+                            return self.data.fifteen_mins[index - 1 - before_candlestick].high_price > \
+                                   self.data.fifteen_mins[index - 2 - before_candlestick].high_price \
+                                   and self.data.fifteen_mins[index - 2 - before_candlestick].high_price > \
+                                       self.data.fifteen_mins[index - 3 - before_candlestick].high_price
                         return False
 
                     if check15min_pattern_MomentumPattern_4(**patterns['4']):
                         self.add_checked_pattern(ans, 'MomentumPattern', 4, True)
 
                 if '5' in patterns:
-                    def check15min_pattern_MomentumPattern_5(before_day=1):
-                        if index >= before_day + 3:
-                            return self.data.fifteen_mins[index - 1 - before_day].low_price > \
-                                   self.data.fifteen_mins[index - 2 - before_day].low_price \
-                                   and self.data.fifteen_mins[index - 2 - before_day].low_price > \
-                                       self.data.fifteen_mins[index - 3 - before_day].low_price
+                    def check15min_pattern_MomentumPattern_5(before_candlestick=1):
+                        if index >= before_candlestick + 3:
+                            return self.data.fifteen_mins[index - 1 - before_candlestick].low_price > \
+                                   self.data.fifteen_mins[index - 2 - before_candlestick].low_price \
+                                   and self.data.fifteen_mins[index - 2 - before_candlestick].low_price > \
+                                       self.data.fifteen_mins[index - 3 - before_candlestick].low_price
                         return False
 
                     if check15min_pattern_MomentumPattern_5(**patterns['5']):
                         self.add_checked_pattern(ans, 'MomentumPattern', 5, True)
 
                 if '6' in patterns:
-                    def check15min_pattern_MomentumPattern_6(before_day=4):
-                        if index >= before_day + 3:
-                            return self.data.fifteen_mins[index - 1 - before_day].low_price > \
-                                   self.data.fifteen_mins[index - 2 - before_day].low_price \
-                                   and self.data.fifteen_mins[index - 2 - before_day].low_price > \
-                                       self.data.fifteen_mins[index - 3 - before_day].low_price
+                    def check15min_pattern_MomentumPattern_6(before_candlestick=4):
+                        if index >= before_candlestick + 3:
+                            return self.data.fifteen_mins[index - 1 - before_candlestick].low_price > \
+                                   self.data.fifteen_mins[index - 2 - before_candlestick].low_price \
+                                   and self.data.fifteen_mins[index - 2 - before_candlestick].low_price > \
+                                       self.data.fifteen_mins[index - 3 - before_candlestick].low_price
                         return False
 
                     if check15min_pattern_MomentumPattern_6(**patterns['6']):
@@ -525,14 +525,14 @@ class PatternCheker:
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_before = sto[0][-1]
 
                             range_data = self.data.fifteen_mins[index - periods - 1: index]
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_now = sto[0][-1]
                             return sto_before < 5 and sto_now > 20
                         return False
@@ -547,14 +547,14 @@ class PatternCheker:
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_before = sto[0][-1]
 
                             range_data = self.data.fifteen_mins[index - periods - 1: index]
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_now = sto[0][-1]
                             return sto_before < 5 and sto_now > 20
                         return False
@@ -569,14 +569,14 @@ class PatternCheker:
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_before = sto[0][-1]
 
                             range_data = self.data.fifteen_mins[index - periods - 1: index]
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_now = sto[0][-1]
                             return sto_before < 5 and sto_now > 20
                         return False
@@ -592,14 +592,14 @@ class PatternCheker:
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_before = sto[0][-1]
 
                             range_data = self.data.fifteen_mins[index - periods - 1: index]
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_now = sto[0][-1]
                             return sto_before > 95 and sto_now < 80
                         return False
@@ -614,14 +614,14 @@ class PatternCheker:
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_before = sto[0][-1]
 
                             range_data = self.data.fifteen_mins[index - periods - 1: index]
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_now = sto[0][-1]
                             return sto_before > 95 and sto_now < 80
                         return False
@@ -636,20 +636,600 @@ class PatternCheker:
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_before = sto[0][-1]
 
                             range_data = self.data.fifteen_mins[index - periods - 1: index]
                             high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
                             low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
                             close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
-                            sto = talib.ATR(high_prices, low_prices, close_prices)
+                            sto = talib.ATR(high_prices, low_prices, close_prices, periods)
                             sto_now = sto[0][-1]
                             return sto_before > 95 and sto_now < 80
                         return False
 
                     if check15min_pattern_MomentumPattern_36(**patterns['36']):
                         self.add_checked_pattern(ans, 'MomentumPattern', 36, True)
+
+
+
+            if 'TendencyPattern' in check_properties:
+                patterns = check_properties['TendencyPattern']
+
+                '''surpassing the average'''
+                if '1' in patterns:
+                    def check15min_pattern_TendencyPattern_1(periods = 20):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1 : index-1]
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+                            ma_price = talib.MA(close_prices, periods)[-1]
+                            if self.data.fifteen_mins[index-1].close_price > ma_price and self.data.fifteen_mins[index-1].open <=ma_price:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_1(** patterns['1']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 1, True)
+
+
+                if '2' in patterns:
+                    def check15min_pattern_TendencyPattern_2(periods=50):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index-1]
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+                            ma_price = talib.MA(close_prices, periods)[-1]
+                            if self.data.fifteen_mins[index - 1].close_price > ma_price and self.data.fifteen_mins[
+                                        index - 1].open <= ma_price:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_2(**patterns['2']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 2, True)
+
+                if '3' in patterns:
+                    def check15min_pattern_TendencyPattern_3(periods=80):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index-1]
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+                            ma_price = talib.MA(close_prices, periods)[-1]
+                            if self.data.fifteen_mins[index - 1].close_price > ma_price and self.data.fifteen_mins[
+                                        index - 1].open <= ma_price:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_3(**patterns['3']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 3, True)
+
+
+                '''below the average'''
+                if '4' in patterns:
+                    def check15min_pattern_TendencyPattern_4(periods=20):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index-1]
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+                            ma_price = talib.MA(close_prices, periods)[-1]
+                            if self.data.fifteen_mins[index - 1].close_price < ma_price and self.data.fifteen_mins[
+                                        index - 1].open >= ma_price:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_4(**patterns['4']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 4, True)
+
+                if '5' in patterns:
+                    def check15min_pattern_TendencyPattern_5(periods=50):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index-1]
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+                            ma_price = talib.MA(close_prices, periods)[-1]
+                            if self.data.fifteen_mins[index - 1].close_price < ma_price and self.data.fifteen_mins[
+                                        index - 1].open >= ma_price:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_5(**patterns['5']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 5, True)
+
+                if '6' in patterns:
+                    def check15min_pattern_TendencyPattern_6(periods=80):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index-1]
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+                            ma_price = talib.MA(close_prices, periods)[-1]
+                            if self.data.fifteen_mins[index - 1].close_price < ma_price and self.data.fifteen_mins[
+                                        index - 1].open >= ma_price:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_6(**patterns['6']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 6, True)
+
+
+                ''' upper than N highest '''
+                if '7' in patterns:
+                    def check15min_pattern_TendencyPattern_7(periods = 20):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            highest = max(map(lambda item: item.high_price, range_data))
+                            if self.data.fifteen_mins[index -1].close_price > highest and self.data.fifteen_mins[index -1].open_price <= highest:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_7(** patterns['7']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 7, True)
+
+                if '8' in patterns:
+                    def check15min_pattern_TendencyPattern_8(periods=50):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            highest = max(map(lambda item: item.high_price, range_data))
+                            if self.data.fifteen_mins[index - 1].close_price > highest and self.data.fifteen_mins[
+                                        index - 1].open_price <= highest:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_8(**patterns['8']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 8, True)
+
+                if '9' in patterns:
+                    def check15min_pattern_TendencyPattern_9(periods=80):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            highest = max(map(lambda item: item.high_price, range_data))
+                            if self.data.fifteen_mins[index - 1].close_price > highest and self.data.fifteen_mins[
+                                        index - 1].open_price <= highest:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_9(**patterns['9']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 9, True)
+
+
+                '''lower than N lowest'''
+                if '10' in patterns:
+                    def check15min_pattern_TendencyPattern_10(periods=20):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            lowest = min(map(lambda item: item.low_price, range_data))
+                            if self.data.fifteen_mins[index - 1].close_price < lowest and self.data.fifteen_mins[
+                                        index - 1].open_price >= lowest:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_10(**patterns['10']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 10, True)
+
+                if '11' in patterns:
+                    def check15min_pattern_TendencyPattern_11(periods=50):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            lowest = min(map(lambda item: item.low_price, range_data))
+                            if self.data.fifteen_mins[index - 1].close_price < lowest and self.data.fifteen_mins[
+                                        index - 1].open_price >= lowest:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_11(**patterns['11']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 11, True)
+
+                if '12' in patterns:
+                    def check15min_pattern_TendencyPattern_12(periods=80):
+                        if index > periods:
+                            range_data = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            lowest = min(map(lambda item: item.low_price, range_data))
+                            if self.data.fifteen_mins[index - 1].close_price < lowest and self.data.fifteen_mins[
+                                        index - 1].open_price >= lowest:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_12(**patterns['12']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 12, True)
+
+
+                '''upper than bollinger '''
+                if '13' in patterns:
+                    def check15min_pattern_TendencyPattern_13(par1=20, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 1 : index -1]
+                            closed = np.array(list(map(lambda item: item.close_price, range_data)))
+                            boll = talib.BBANDS(closed, par1, par2, par2)
+                            upper = boll[0][-1]
+                            if self.data.fifteen_mins[index-1].close_price > upper and self.data.fifteen_mins[index-1].open_price <= upper:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_13(** patterns['13']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 13, True)
+
+                if '14' in patterns:
+                    def check15min_pattern_TendencyPattern_14(par1=50, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 1: index - 1]
+                            closed = np.array(list(map(lambda item: item.close_price, range_data)))
+                            boll = talib.BBANDS(closed, par1, par2, par2)
+                            upper = boll[0][-1]
+                            if self.data.fifteen_mins[index - 1].close_price > upper and self.data.fifteen_mins[
+                                        index - 1].open_price <= upper:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_14(**patterns['14']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 14, True)
+
+                if '15' in patterns:
+                    def check15min_pattern_TendencyPattern_15(par1=80, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 1: index - 1]
+                            closed = np.array(list(map(lambda item: item.close_price, range_data)))
+                            boll = talib.BBANDS(closed, par1, par2, par2)
+                            upper = boll[0][-1]
+                            if self.data.fifteen_mins[index - 1].close_price > upper and self.data.fifteen_mins[
+                                        index - 1].open_price <= upper:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_15(**patterns['15']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 15, True)
+
+
+                ''' lower than bollinger'''
+                if '16' in patterns:
+                    def check15min_pattern_TendencyPattern_16(par1=20, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 1: index - 1]
+                            closed = np.array(list(map(lambda item: item.close_price, range_data)))
+                            boll = talib.BBANDS(closed, par1, par2, par2)
+                            lower = boll[2][-1]
+                            if self.data.fifteen_mins[index - 1].close_price < lower and self.data.fifteen_mins[
+                                        index - 1].open_price >= lower:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_16(**patterns['16']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 16, True)
+
+                if '17' in patterns:
+                    def check15min_pattern_TendencyPattern_17(par1=50, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 1: index - 1]
+                            closed = np.array(list(map(lambda item: item.close_price, range_data)))
+                            boll = talib.BBANDS(closed, par1, par2, par2)
+                            lower = boll[2][-1]
+                            if self.data.fifteen_mins[index - 1].close_price < lower and self.data.fifteen_mins[
+                                        index - 1].open_price >= lower:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_17(**patterns['17']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 17, True)
+
+                if '18' in patterns:
+                    def check15min_pattern_TendencyPattern_18(par1=80, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 1: index - 1]
+                            closed = np.array(list(map(lambda item: item.close_price, range_data)))
+                            boll = talib.BBANDS(closed, par1, par2, par2)
+                            lower = boll[2][-1]
+                            if self.data.fifteen_mins[index - 1].close_price < lower and self.data.fifteen_mins[
+                                        index - 1].open_price >= lower:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_18(**patterns['18']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 18, True)
+
+
+                ''' uppper than Keltner'''
+                if '19' in patterns:
+                    def check15min_pattern_TendencyPattern_19(par1=20, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 2: index-1]
+                            high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
+                            low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+
+                            ma = talib.MA(close_prices, par1)[-1]
+                            atr = talib.ATR(high_prices, low_prices, close_prices, par1)[-1]
+                            keltner = ma + atr * par2
+
+                            if self.data.fifteen_mins[index - 1].close_price > keltner and self.data.fifteen_mins[index - 1].open_price <= keltner:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_19(** patterns['19']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 19, True)
+
+                if '20' in patterns:
+                    def check15min_pattern_TendencyPattern_20(par1=50, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 2: index - 1]
+                            high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
+                            low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+
+                            ma = talib.MA(close_prices, par1)[-1]
+                            atr = talib.ATR(high_prices, low_prices, close_prices, par1)[-1]
+                            keltner = ma + atr * par2
+
+                            if self.data.fifteen_mins[index - 1].close_price > keltner and self.data.fifteen_mins[
+                                        index - 1].open_price <= keltner:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_20(**patterns['20']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 20, True)
+
+                if '21' in patterns:
+                    def check15min_pattern_TendencyPattern_21(par1=80, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 2: index - 1]
+                            high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
+                            low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+
+                            ma = talib.MA(close_prices, par1)[-1]
+                            atr = talib.ATR(high_prices, low_prices, close_prices, par1)[-1]
+                            keltner = ma + atr * par2
+
+                            if self.data.fifteen_mins[index - 1].close_price > keltner and self.data.fifteen_mins[
+                                        index - 1].open_price <= keltner:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_21(**patterns['21']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 21, True)
+
+
+                ''' lower than Keltner '''
+                if '22' in patterns:
+                    def check15min_pattern_TendencyPattern_22(par1=20, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 2: index - 1]
+                            high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
+                            low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+
+                            ma = talib.MA(close_prices, par1)[-1]
+                            atr = talib.ATR(high_prices, low_prices, close_prices, par1)[-1]
+                            keltner = ma - atr * par2
+
+                            if self.data.fifteen_mins[index - 1].close_price < keltner and self.data.fifteen_mins[
+                                        index - 1].open_price >= keltner:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_22(**patterns['22']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 22, True)
+
+                if '23' in patterns:
+                    def check15min_pattern_TendencyPattern_23(par1=50, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 2: index - 1]
+                            high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
+                            low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+
+                            ma = talib.MA(close_prices, par1)[-1]
+                            atr = talib.ATR(high_prices, low_prices, close_prices, par1)[-1]
+                            keltner = ma - atr * par2
+
+                            if self.data.fifteen_mins[index - 1].close_price < keltner and self.data.fifteen_mins[
+                                        index - 1].open_price >= keltner:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_23(**patterns['23']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 23, True)
+
+                if '24' in patterns:
+                    def check15min_pattern_TendencyPattern_24(par1=80, par2=2):
+                        if index > par1:
+                            range_data = self.data.fifteen_mins[index - par1 - 2: index - 1]
+                            high_prices = np.array(list(map(lambda item: item.high_price, range_data)))
+                            low_prices = np.array(list(map(lambda item: item.low_price, range_data)))
+                            close_prices = np.array(list(map(lambda item: item.close_price, range_data)))
+
+                            ma = talib.MA(close_prices, par1)[-1]
+                            atr = talib.ATR(high_prices, low_prices, close_prices, par1)[-1]
+                            keltner = ma - atr * par2
+
+                            if self.data.fifteen_mins[index - 1].close_price < keltner and self.data.fifteen_mins[
+                                        index - 1].open_price >= keltner:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_24(**patterns['24']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 24, True)
+
+
+                ''' surpassing the WPR '''
+                if '25' in patterns:
+                    def check15min_pattern_TendencyPattern_25(periods = 50):
+                        if index > periods:
+                            data_range = self.data.fifteen_mins[index - periods : index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 1: index -1]
+                            wpr = PatternCheker.WPR(data_range)
+                            wpr1 = PatternCheker.WPR(data_range1)
+
+                            if wpr > -50 and wpr1 <= -50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_25(** patterns['25']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 25, True)
+
+                if '26' in patterns:
+                    def check15min_pattern_TendencyPattern_26(periods=100):
+                        if index > periods:
+                            data_range = self.data.fifteen_mins[index - periods: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            wpr = PatternCheker.WPR(data_range)
+                            wpr1 = PatternCheker.WPR(data_range1)
+
+                            if wpr > -50 and wpr1 <= -50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_26(**patterns['26']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 26, True)
+
+                if '27' in patterns:
+                    def check15min_pattern_TendencyPattern_27(periods=200):
+                        if index > periods:
+                            data_range = self.data.fifteen_mins[index - periods: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            wpr = PatternCheker.WPR(data_range)
+                            wpr1 = PatternCheker.WPR(data_range1)
+
+                            if wpr > -50 and wpr1 <= -50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_27(**patterns['27']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 27, True)
+
+                ''' below the WPR '''
+                if '28' in patterns:
+                    def check15min_pattern_TendencyPattern_28(periods=50):
+                        if index > periods:
+                            data_range = self.data.fifteen_mins[index - periods: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            wpr = PatternCheker.WPR(data_range)
+                            wpr1 = PatternCheker.WPR(data_range1)
+
+                            if wpr < -50 and wpr1 >= -50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_28(**patterns['28']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 28, True)
+
+                if '29' in patterns:
+                    def check15min_pattern_TendencyPattern_29(periods=100):
+                        if index > periods:
+                            data_range = self.data.fifteen_mins[index - periods: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            wpr = PatternCheker.WPR(data_range)
+                            wpr1 = PatternCheker.WPR(data_range1)
+
+                            if wpr < -50 and wpr1 >= -50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_29(**patterns['29']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 29, True)
+
+                if '30' in patterns:
+                    def check15min_pattern_TendencyPattern_30(periods=200):
+                        if index > periods:
+                            data_range = self.data.fifteen_mins[index - periods: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 1: index - 1]
+                            wpr = PatternCheker.WPR(data_range)
+                            wpr1 = PatternCheker.WPR(data_range1)
+
+                            if wpr < -50 and wpr1 >= -50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_30(**patterns['30']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 30, True)
+
+
+                ''' surpass RSI '''
+                if '31' in patterns:
+                    def check15min_pattern_TendencyPattern_31(periods=50):
+                        if index > periods + 1:
+                            data_range = self.data.fifteen_mins[index - periods -1: index]
+                            data_range1 = self.data.fifteen_mins[index - periods -2: index-1]
+                            rsi = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range))), periods)
+                            rsi1 = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range1))), periods)
+                            if rsi > 50 and rsi1 <= 50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_31(** patterns['31']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 31, True)
+
+                if '32' in patterns:
+                    def check15min_pattern_TendencyPattern_32(periods=100):
+                        if index > periods + 1:
+                            data_range = self.data.fifteen_mins[index - periods - 1: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 2: index - 1]
+                            rsi = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range))), periods)
+                            rsi1 = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range1))), periods)
+                            if rsi > 50 and rsi1 <= 50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_32(**patterns['32']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 32, True)
+
+                if '33' in patterns:
+                    def check15min_pattern_TendencyPattern_33(periods=200):
+                        if index > periods + 1:
+                            data_range = self.data.fifteen_mins[index - periods - 1: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 2: index - 1]
+                            rsi = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range))), periods)
+                            rsi1 = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range1))), periods)
+                            if rsi > 50 and rsi1 <= 50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_33(**patterns['33']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 33, True)
+
+                ''' below RSI '''
+                if '34' in patterns:
+                    def check15min_pattern_TendencyPattern_34(periods=50):
+                        if index > periods + 1:
+                            data_range = self.data.fifteen_mins[index - periods - 1: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 2: index - 1]
+                            rsi = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range))), periods)
+                            rsi1 = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range1))), periods)
+                            if rsi < 50 and rsi1 >= 50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_34(**patterns['34']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 34, True)
+
+                if '35' in patterns:
+                    def check15min_pattern_TendencyPattern_35(periods=100):
+                        if index > periods + 1:
+                            data_range = self.data.fifteen_mins[index - periods - 1: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 2: index - 1]
+                            rsi = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range))), periods)
+                            rsi1 = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range1))), periods)
+                            if rsi < 50 and rsi1 >= 50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_35(**patterns['35']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 35, True)
+
+                if '36' in patterns:
+                    def check15min_pattern_TendencyPattern_36(periods=200):
+                        if index > periods + 1:
+                            data_range = self.data.fifteen_mins[index - periods - 1: index]
+                            data_range1 = self.data.fifteen_mins[index - periods - 2: index - 1]
+                            rsi = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range))), periods)
+                            rsi1 = talib.RSI(np.array(list(map(lambda item: item.close_price, data_range1))), periods)
+                            if rsi < 50 and rsi1 >= 50:
+                                return True
+                        return False
+
+                    if check15min_pattern_TendencyPattern_36(**patterns['36']):
+                        self.add_checked_pattern(ans, 'TendencyPattern', 36, True)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -774,6 +1354,11 @@ class PatternCheker:
         return ans
 
 
+    def WPR(items):
+        highest = max(map(lambda item:item.high_price, items))
+        lowest = min(map(lambda item:item.low_price, items))
+        closed = items[-1].close_price
+        return (closed - highest) / (highest - lowest)
 
 
     def ckeck_patterns_for_all_levels(self, time_start=None, time_end=None):

@@ -14,7 +14,6 @@ def mkdatetimefromstr(datetime_str):
 class DataStructure:
     time_levels = ["day", "15min", "5min", "1min"]
     def __init__(self, path, name=None):
-
         self.path = path
         self.file_name = path.split('\\')[-1]
         if '/' in self.file_name:

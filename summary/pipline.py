@@ -86,7 +86,7 @@ if __name__ == '__main__':
                     ((2008,1,1),(2009,1,1)), ((2009,1,1),(2010,1,1)), ((2010,1,1),(2011,1,1)), ((2012,1,1),(2013,1,1)),
                     ((2013,1,1),(2014,1,1)), ((2014,1,1),(2015,1,1)), ((2015,1,1),(2016,1,1)), ((2016,1,1),(2017,1,1))]
 
-    data_dir = '/Users/liuyichao/PycharmProjects/ptn/raw_data/data'
+    data_dir = '/Users/liuyichao/PycharmProjects/ptn/raw_data'
     output_path = '/Users/liuyichao/PycharmProjects/ptn/output'
 
     properties= load_property('/Users/liuyichao/PycharmProjects/ptn/properties/pattern.property')
