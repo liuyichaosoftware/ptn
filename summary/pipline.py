@@ -87,9 +87,9 @@ if __name__ == '__main__':
                     ((2013,1,1),(2014,1,1)), ((2014,1,1),(2015,1,1)), ((2015,1,1),(2016,1,1)), ((2016,1,1),(2017,1,1))]
 
     data_dir = '/Users/liuyichao/PycharmProjects/ptn/raw_data'
-    output_path = '/Users/liuyichao/PycharmProjects/ptn/output'
+    output_path = '/Users/liuyichao/PycharmProjects/ptn/output_TendencyPattern'
 
-    properties= load_property('/Users/liuyichao/PycharmProjects/ptn/properties/pattern.property')
+    properties= load_property('/Users/liuyichao/PycharmProjects/ptn/properties/TendencyPattern.property')
 
     slippage_properties = load_property('/Users/liuyichao/PycharmProjects/ptn/properties/category_slippage.property')
 

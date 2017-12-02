@@ -45,7 +45,7 @@ def category_period_market_summary(start_time, end_time, category_data, level):
         else:
             shizi_num += 1
 
-    return price_change, total_num, yang_num, yang_num*100.0/total_num, yin_num, yin_num*100.0/total_num ,shizi_num, shizi_num*100.0/total_num
+    return price_change, total_num, yang_num, yang_num*100.0/total_num if total_num != 0 else 0, yin_num, yin_num*100.0/total_num if total_num != 0 else 0,shizi_num, shizi_num*100.0/total_num if total_num !=0 else 0
 
 import time, os, datetime
 
